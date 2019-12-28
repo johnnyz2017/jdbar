@@ -1,3 +1,21 @@
+var constraints = { video: { facingMode: "user" }, audio: false };
+const video = document.querySelector('#video');
+
+function cameraStart() {
+    navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(function(stream) {
+        track = stream.getTracks()[0];
+        video.srcObject = stream;
+    })
+    .catch(function(error) {
+        console.error("Oops. Something is broken.", error);
+    });
+}
+
+cameraStart();
+
+
 const webAR = new WebAR(1000, 'recognize.php');
  
 var initFunc = function () {
@@ -50,86 +68,10 @@ var initFunc = function () {
         });
 };
 
-var audioBG = document.getElementById('audio_bg');
-var audioContents = document.getElementById('audio_contents');
-var audioBirds = document.getElementById('audio_birds');
-var contentsTxt = document.getElementById('contents_text');
-var muted = true;
-var musicControllerObj = document.querySelector("#musicController");
-var restartObj = document.querySelector("#restartScan");
-// var armodeButton = document.querySelector("#armode");
-// var viewmodeButton = document.querySelector("#viewmode");
-
-var loadingUI = document.getElementById('loadingUI');
-// loadingUI.classList.remove('sk-wave');
-// loadingUI.classList.add('none');
-
-var scanOBJ = document.getElementById('scanIndict');
-// var scanGIF = document.getElementById('scanGIF');
-// var loadingGIF = document.getElementById('loadingGIF');
-// scanGIF.style.opacity = 1;
-// loadingGIF.style.opacity = 0;
-
-contentsTxt.classList.remove('fade-in-words');
-contentsTxt.classList.add('none');
-
-restartObj.style.opacity = 0;
 
 document.addEventListener('touchstart', function () {
     console.log("touch start");
 });
-
-// audioBG.addEventListener('play', function () {
-//     musicControllerObj.src = "asset/images/music.png";
-//     muted = false;
-// });
-
-// audioBG.addEventListener('pause', function () {
-//     musicControllerObj.src = "asset/images/muted.png";
-//     muted = true;
-// });
-
-// d
-
-musicControllerObj.addEventListener('click', () => {
-    //try to play music
-    console.log("bg clicked", muted);
-    if (muted) {
-        
-        // audioBirds.pause();
-        // audioBG.pause();
-        // audioContents.play();
-
-        contentsTxt.classList.remove('none');
-        contentsTxt.classList.remove('fade-in-words');
-        contentsTxt.classList.add('fade-in-words');
-
-        musicControllerObj.src = "asset/images/music.png";
-        muted = false;
-    } else {
-        // audioBG.pause();
-        // audioContents.pause();
-        // audioBirds.pause();
-
-        musicControllerObj.src = "asset/images/muted.png";
-        muted = true;
-    }
-}, false);
-
-restartObj.addEventListener('click', () => {
-    //try to restart scanning    
-    // startARmode();
-    contentsTxt.classList.remove('none');
-    contentsTxt.classList.add('fade-in-words');
-}, false);
-
-function startARmode(){
-
-    document.querySelector('#videoDevice').style.display = 'block';
-    restartObj.style.opacity = 0;
-
-    console.log("try to continue to recognizing...");
-}
 
 function hasClass(elem, cls) {
     cls = cls || '';
@@ -159,6 +101,4 @@ window.addEventListener("resize", function () {
     console.log("window resize");
 });
 
-initFunc();
-
-startARmode();
+// initFunc();
