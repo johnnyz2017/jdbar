@@ -1,0 +1,494 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+.game {
+    position: relative;
+    width: 320px;
+    height: 376px;
+    background: url("../imgs/gophers-Slice_Background.png") no-repeat 0 0;
+}
+
+.enemies {
+    position: absolute;
+    top: 150px;
+    width: 320px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.enemy {
+    width: 50px;
+    height: 50px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    margin: 0;
+    position: absolute;
+}
+
+.enemy:nth-of-type(1) {
+    background: url("../imgs/gophers-1.png") no-repeat 0 0;
+    -webkit-animation: enemy_1 5s ease infinite;
+}
+
+.enemy:nth-of-type(2) {
+    background: url("../imgs/gophers-2.png") no-repeat 0 0;
+    -webkit-animation: enemy_2 5s ease 1s infinite;
+}
+
+.enemy:nth-of-type(3) {
+    background: url("../imgs/gophers-3.png") no-repeat 0 0;
+    -webkit-animation: enemy_3 10s ease 2s infinite;
+}
+
+.enemy:nth-of-type(4) {
+    background: url("../imgs/gophers-4.png") no-repeat 0 0;
+    -webkit-animation: enemy_4 10s ease 1s infinite;
+}
+
+.enemy:nth-of-type(5) {
+    background: url("../imgs/gophers-5.png") no-repeat 0 0;
+    -webkit-animation: enemy_5 10s ease 2s infinite;
+}
+
+.enemy:nth-of-type(6) {
+    background: url("../imgs/gophres-6.png") no-repeat 0 0;
+    -webkit-animation: enemy_6 5s ease infinite;
+}
+
+.enemy:nth-of-type(7) {
+    background: url("../imgs/gophers-1.png") no-repeat 0 0;
+    -webkit-animation: enemy_7 5s ease 1s infinite;
+}
+
+.enemy:nth-of-type(8) {
+    background: url("../imgs/gophers-1.png") no-repeat 0 0;
+    -webkit-animation: enemy_8 10s ease 2s infinite;
+}
+
+.enemy:nth-of-type(9) {
+    background: url("../imgs/gophers-1.png") no-repeat 0 0;
+    -webkit-animation: enemy_9 10s ease 1s infinite;
+}
+
+.enemy:nth-of-type(10) {
+    background: url("../imgs/gophers-1.png") no-repeat 0 0;
+    -webkit-animation: enemy_10 8s 1s ease infinite;
+}
+
+/*调整地鼠的初始位置：在游戏区域之外*/
+.enemy:nth-of-type(5n+1) {
+    top: -93px;
+    left: 12px;
+}
+
+.enemy:nth-of-type(5n+2) {
+    top: -93px;
+    left: 74px;
+}
+
+.enemy:nth-of-type(5n+3) {
+    top: -93px;
+    left: 135px;
+}
+
+.enemy:nth-of-type(5n+4) {
+    top: -93px;
+    left: 196px;
+}
+
+.enemy:nth-of-type(5n+5) {
+    top: -93px;
+    left: 258px;
+}
+
+/*地鼠的AI动画*/
+@-webkit-keyframes enemy_1 {
+    from {
+        -webkit-transform: translateY(200px);
+    }
+    40% {
+        -webkit-transform: translateY(145px);
+    }
+    50% {
+        -webkit-transform: translateY(200px);
+    }
+    to {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+@-webkit-keyframes enemy_6 {
+    from {
+        -webkit-transform: translateY(200px);
+    }
+    40% {
+        -webkit-transform: translateY(200px);
+    }
+    50% {
+        -webkit-transform: translateY(145px);
+    }
+    90% {
+        -webkit-transform: translateY(145px);
+    }
+    to {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+@-webkit-keyframes enemy_2 {
+    from {
+        -webkit-transform: translateY(200px);
+    }
+    40% {
+        -webkit-transform: translateY(200px);
+    }
+    50% {
+        -webkit-transform: translateY(145px);
+    }
+    90% {
+        -webkit-transform: translateY(145px);
+
+    }
+    to {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+@-webkit-keyframes enemy_7 {
+    from {
+        -webkit-transform: translateY(200px);
+    }
+    20% {
+        -webkit-transform: translateY(145px);
+    }
+    30% {
+        -webkit-transform: translateY(200px);
+    }
+    40% {
+        -webkit-transform: translateY(145px);
+    }
+    45% {
+        -webkit-transform: translateY(200px);
+    }
+    to {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+@-webkit-keyframes enemy_3 {
+    from {
+        -webkit-transform: translateY(200px);
+    }
+    40% {
+        -webkit-transform: translateY(200px);
+    }
+    50% {
+        -webkit-transform: translateY(145px);
+    }
+    60% {
+        -webkit-transform: translateY(145px);
+    }
+    90% {
+        -webkit-transform: translateY(200px);
+    }
+    to {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+@-webkit-keyframes enemy_8 {
+    from {
+        -webkit-transform: translateY(200px);
+    }
+    10% {
+        -webkit-transform: translateY(145px);
+    }
+    15% {
+        -webkit-transform: translateY(200px);
+    }
+    20% {
+        -webkit-transform: translateY(145px);
+    }
+    25% {
+        -webkit-transform: translateY(200px);
+    }
+    30% {
+        -webkit-transform: translateY(145px);
+    }
+    40% {
+        -webkit-transform: translateY(200px);
+    }
+    70% {
+        -webkit-transform: translateY(200px);
+    }
+    90% {
+        -webkit-transform: translateY(145px);
+    }
+    to {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+@-webkit-keyframes enemy_4 {
+    from {
+        -webkit-transform: translateY(200px);
+    }
+    30% {
+        -webkit-transform: translateY(160px);
+    }
+    50% {
+        -webkit-transform: translateY(145px);
+    }
+    60% {
+        -webkit-transform: translateY(200px);
+    }
+    to {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+@-webkit-keyframes enemy_9 {
+    from {
+        -webkit-transform: translateY(200px);
+    }
+    60% {
+        -webkit-transform: translateY(200px);
+    }
+    70% {
+        -webkit-transform: translateY(145px);
+    }
+    75% {
+        -webkit-transform: translateY(160px);
+    }
+    80% {
+        -webkit-transform: translateY(145px);
+    }
+    85% {
+        -webkit-transform: translateY(160px);
+    }
+    90% {
+        -webkit-transform: translateY(145px);
+    }
+    to {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+@-webkit-keyframes enemy_5 {
+    from {
+        -webkit-transform: translateY(200px);
+    }
+    30% {
+        -webkit-transform: translateY(200px);
+    }
+    60% {
+        -webkit-transform: translateY(145px);
+    }
+    to {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+@-webkit-keyframes enemy_10 {
+    from {
+        -webkit-transform: translateY(200px);
+    }
+    5% {
+        -webkit-transform: translateY(145px);
+    }
+    30% {
+        -webkit-transform: translateY(200px);
+    }
+    to {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+.enemy:checked {
+    -webkit-animation: none; /*取消动画*/
+    opacity: 0; /*设置透明*/
+    pointer-events: none; /*不能被点击*/
+    -webkit-pointer-events: none;
+}
+
+/*碰特效*/
+.effect {
+    width: 107px;
+    height: 99px;
+    background: url("../imgs/gophers-Slice_Boom.png") no-repeat 0 0;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none; /*不能被点击*/
+    -webkit-pointer-events: none;
+}
+
+.effect:nth-of-type(5n+1) {
+    top: 0;
+    left: 0;
+}
+
+.effect:nth-of-type(5n+2) {
+    top: 0;
+    left: 50px;
+}
+
+.effect:nth-of-type(5n+3) {
+    top: 0;
+    left: 105px;
+}
+
+.effect:nth-of-type(5n+4) {
+    top: 0;
+    left: 164px;
+}
+
+.effect:nth-of-type(5n) {
+    top: 0;
+    left: 214px;
+}
+
+.enemy:checked + .effect {
+    -webkit-animation: effect 1s linear;
+}
+
+@-webkit-keyframes effect {
+    from {
+        opacity: 0;
+        -webkit-transform: translate(0, 0);
+    }
+    30% {
+        opacity: 1;
+        -webkit-transform: translate(-10px, -10px);
+    }
+    80% {
+        opacity: 1;
+        -webkit-transform: translate(-10px, -10px);
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translate(0, 0);
+    }
+}
+
+/*土堆*/
+.mound {
+    width: 320px;
+    height: 170px;
+    background: url("../imgs/gophers-Slice_Mound.png") no-repeat 0 0;
+    position: absolute;
+    top: 170px;
+    left: 0;
+    z-index: 2;
+    pointer-events: none; /*不能被点击*/
+    -webkit-pointer-events: none;
+}
+
+/*时间条*/
+.timer {
+    width: 325px;
+    height: 51px;
+    background: url("../imgs/gophers-Slice_Timeboard.png") no-repeat 0 0;
+    background-size: 325px 38px;
+    position: absolute;
+    top: 340px;
+    left: -1px;
+    z-index: 3;
+}
+
+.progress {
+    width: 183px;
+    height: 28px;
+    background: url("../imgs/gophers-Slice_time-line.png") repeat-x 0 0;
+    position: absolute;
+    top: 4px;
+    left: 121px;
+    -webkit-border-radius: 8px;
+    -webkit-animation: timer 10s linear forwards;
+}
+
+@-webkit-keyframes timer {
+    from {
+        width: 0;
+    }
+    to {
+        width: 183px;
+    }
+}
+
+/*分数*/
+.score-board {
+    width: 158px;
+    height: 106px;
+    position: absolute;
+    top: 85px;
+    left: 85px;
+    z-index: 3;
+    background: url("../imgs/gophers-Slice_Scoreboard.png") no-repeat 0 0;
+}
+
+.score-wrap {
+    overflow: hidden;
+    width: 112px;
+    height: 63px;
+    position: absolute;
+    top: 19px;
+    left: 24px;
+}
+
+.scores {
+    position: absolute;
+    top: -635px;
+    left: 0;
+}
+
+/*地鼠死了，占位方块出现*/
+.score {
+    margin: 0;
+    width: 112px;
+    height: 63px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    display: block;
+    -webkit-transition: all 0.3s linear;
+}
+
+.score-pic {
+    width: 112px;
+    height: 694px;
+    background: url("../imgs/gophers-Slice_Score-2.png") no-repeat 0 0;
+    pointer-events: none; /*不能被点击*/
+    -webkit-pointer-events: none;
+}
+
+/*地鼠活着，不需要占位方块*/
+.score:checked {
+    height: 0;
+    position: absolute;
+    top: 0;
+}
+
+/*游戏结束*/
+.gameover {
+    width: 320px;
+    height: 376px;
+    background: url("../imgs/gophers-Slice_Gameover.png") no-repeat 0 0;
+    position: absolute;
+    top: -376px;
+    z-index: 99;
+
+    -webkit-animation: gameover 0.5s linear forwards 10s;
+}
+
+@-webkit-keyframes gameover {
+    from {
+        top: -376px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
