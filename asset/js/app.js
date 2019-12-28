@@ -101,7 +101,7 @@ window.addEventListener("resize", function () {
     console.log("window resize");
 });
 
-initFunc();
+
 
 // document.getElementById("jdb01").onclick = function s(){
 //     console.log("jdb01 been clicked");
@@ -171,6 +171,7 @@ $("#start").click(function(){
 
 $("#picking").hide();
 $(".picked_container").hide();
+$("#main").hide();
 
 $("#ball-pick").click(function(){
     $(".picked_container").show();
