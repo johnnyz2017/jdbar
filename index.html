@@ -1,62 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-    <title>打地鼠</title>
-</head>
-<body>
+    <title>WebAR Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="asset/css/default.css" />
 
-<!--整个游戏区域-->
-<section class="game">
-    <!--土堆-->
-    <div class="mound"></div>
-    <!--地鼠-->
-    <div class="enemies">
-        <input class="enemy" id="enemy_1" name="enemy_1" type="radio">
-        <div class="effect"></div>
-        <input class="enemy" id="enemy_2" name="enemy_2" type="radio">
-        <div class="effect"></div>
-        <input class="enemy" id="enemy_3" name="enemy_3" type="radio">
-        <div class="effect"></div>
-        <input class="enemy" id="enemy_4" name="enemy_4" type="radio">
-        <div class="effect"></div>
-        <input class="enemy" id="enemy_5" name="enemy_5" type="radio">
-        <div class="effect"></div>
-        <input class="enemy" id="enemy_6" name="enemy_6" type="radio">
-        <div class="effect"></div>
-        <input class="enemy" id="enemy_7" name="enemy_7" type="radio">
-        <div class="effect"></div>
-        <input class="enemy" id="enemy_8" name="enemy_8" type="radio">
-        <div class="effect"></div>
-        <input class="enemy" id="enemy_9" name="enemy_9" type="radio">
-        <div class="effect"></div>
-        <input class="enemy" id="enemy_10" name="enemy_10" type="radio">
-        <div class="effect"></div>
+    
+</head>
+
+<body>
+    <canvas id="renderCanvas" touch-action="none"></canvas>
+
+    <img src="asset/images/muted.png" alt="" id="musicController" class="left">
+    <img src="asset/images/restart.png" alt="" id="restartScan" class="right">
+
+    <!-- <img src="asset/images/loading3.gif" alt="" id="loadingGIF" class="center">
+    <img src="asset/images/circle3.gif" alt="" id="scanGIF" class="center"> -->
+
+    <div id="loadingUI" class="none">
+        <div class="sk-rect sk-rect1"></div>
+        <div class="sk-rect sk-rect2"></div>
+        <div class="sk-rect sk-rect3"></div>
+        <div class="sk-rect sk-rect4"></div>
+        <div class="sk-rect sk-rect5"></div>
+        <span>下载中...请耐心等待</span>
+        <!-- <span id="loadingTxt">0%</span> -->
     </div>
-    <!--计时模块-->
-    <div class="timer">
-        <div class="progress"></div>
+
+    <div id="scanIndict" class="wrap">
+        <div class="shan"></div>
     </div>
-    <!--分数-->
-    <div class="score-board">
-        <div class="score-wrap">
-            <div class="scores">
-                <input checked class="score" name="enemy_1" type="radio"/>
-                <input checked class="score" name="enemy_2" type="radio"/>
-                <input checked class="score" name="enemy_3" type="radio"/>
-                <input checked class="score" name="enemy_4" type="radio"/>
-                <input checked class="score" name="enemy_5" type="radio"/>
-                <input checked class="score" name="enemy_6" type="radio"/>
-                <input checked class="score" name="enemy_7" type="radio"/>
-                <input checked class="score" name="enemy_8" type="radio"/>
-                <input checked class="score" name="enemy_9" type="radio"/>
-                <input checked class="score" name="enemy_10" type="radio"/>
-                <div class="score-pic"></div>
-            </div>
-        </div>
+
+    <div id="contents_text" class="none">
+        <div class="first-words">绝句</div>
+        <div class="second-words">唐 - 杜甫</div>
+        <div class="third-words">迟日江山丽，</div>
+        <div class="four-words">春风花草香。</div>
+        <div class="five-words">泥融飞燕子，</div>
+        <div class="six-words">沙暖睡鸳鸯。</div>
     </div>
-    <a class="gameover" href="index.html"></a>
-</section>
+
+    <video id="video" playsinline=""></video>
+
+    <div class="footer">
+        <select class="none" id="videoDevice"></select>
+    </div>
+
+    <script type="text/javascript" src="asset/js/adapter.js"></script>
+    <script type="text/javascript" src="asset/js/webar.js"></script>
+
+    <script type="text/javascript" src="asset/js/app.js"></script>
 </body>
+
 </html>
