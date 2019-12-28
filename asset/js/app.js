@@ -170,3 +170,14 @@ $("#start").click(function(){
 });
 
 $("#picking").hide();
+$(".picked_container").hide();
+
+$("#ball-pick").click(function(){
+    $(".picked_container").show();
+});
+
+$("#restart").click(function(){
+    $(".picked_container").hide();
+    $("#picking").hide();
+    $("#main").show();
+});
