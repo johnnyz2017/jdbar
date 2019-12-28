@@ -102,3 +102,38 @@ window.addEventListener("resize", function () {
 });
 
 initFunc();
+
+document.getElementById("jdb01").onclick = function s(){
+    console.log("jdb01 been clicked");
+}
+
+
+$(document).ready(function(){
+    animateDiv('#jdb01');
+    animateDiv('#yg01');
+    animateDiv('#jdb02');
+    animateDiv('#yg02');
+    animateDiv('#jdb03');
+    animateDiv('#yg03');
+});
+
+function makeNewPosition(){
+    
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+    
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh,nw];    
+    
+}
+
+function animateDiv(myid){
+    var newq = makeNewPosition();
+    $(myid).animate({ top: newq[0], left: newq[1] }, 5000,   function(){
+      animateDiv(myid);        
+    });
+    
+};

@@ -4,7 +4,7 @@ body {
     overflow: hidden;
 }
 
-#renderCanvas {
+/* #renderCanvas {
     width: 100%;
     height: 100%;
     outline: none;
@@ -13,7 +13,7 @@ body {
     top: 0;
     left: 0;
     z-index: 10;
-}
+} */
 
 audio {
     display: none;
@@ -61,67 +61,19 @@ audio {
     z-index: 10000;
 }
 
-.sk-wave {
-    position: absolute;
-    display: inline-block;
-    margin: 200px 200px;
-    width: 50px;
-    height: 40px;
-    text-align: center;
-    font-size: 10px;
-    z-index: 100000;
-}
-
-/* .yg{
-    position: absolute;
-    width: 130px;
-    height: 200px;
-    z-index: 100;
-    background-image: url("../images/yg0/1.png");
-    background-size: cover;
-    animation: yg-bg-sprit 1s infinite;
-}
-
-@keyframes yg-bg-sprit{
-    0%, 100%{
-        background-image: url("../images/yg0/1.png");
-    }
-
-    20%{
-        background-image: url("../images/yg0/2.png");
-    }
-
-    40%{
-        background-image: url("../images/yg0/3.png");
-    }
-
-    60%{
-        background-image: url("../images/yg0/4.png");
-    }
-
-    80%{
-        background-image: url("../images/yg0/5.png");
-    }
-} */
-
 .yg{
     width: 252px; height: 400px;
     background: url('../images/yg-sprites.png');
     animation: yg-anim 1s steps(5) infinite;
     transform: scale(0.5);
     z-index: 100;
+    transform-origin: 0 0;
 }
 
 @keyframes yg-anim {
     100%{
         background-position: -1300px;
     }
-}
-
-#yg01{
-    position: absolute;
-    /* top: 200px;
-    left:100px; */
 }
 
 
@@ -131,6 +83,7 @@ audio {
     animation: jdb-anim 1s steps(6) infinite;
     transform: scale(0.3);
     z-index: 100;
+    transform-origin: 0 0;
 }
 
 @keyframes jdb-anim {
@@ -139,194 +92,38 @@ audio {
     }
 }
 
+#yg01{
+    position: absolute;
+    top: 5%;
+    left:0%;
+}
+
 #jdb01{
     position: absolute;
-    top: -300px;
-    left:-100px;
+    top: 2%;
+    left: 30%;
 }
 
-/* .jdb{
+#yg02{
     position: absolute;
-    top: 100px;
-    left: 300px;
-    width: 130px;
-    height: 200px;
-    z-index: 100;
-    background-image: url("../images/jdb0/01.png");
-    background-size: cover;
-    animation: jdb-bg-sprit 1s infinite;
+    top: 30%;
+    left: 40%;
 }
 
-@keyframes jdb-bg-sprit{
-    0%{
-        background-image: url("../images/jdb0/01.png");
-    }
-
-    20%{
-        background-image: url("../images/jdb0/02.png");
-    }
-
-    40%{
-        background-image: url("../images/jdb0/03.png");
-    }
-
-    60%{
-        background-image: url("../images/jdb0/04.png");
-    }
-
-    80%{
-        background-image: url("../images/jdb0/05.png");
-    }
-
-    90%{
-        background-image: url("../images/jdb0/06.png");
-    }
-} */
-
-/* 
-.jdb01{
-    width: 130px;
-    height: 200px;
-    z-index: 100;
-    background-image: url("../images/jdb0/01.png");
-    background-size: cover;
-    display: block;
-}
-
-.jdb02{
-    width: 130px;
-    height: 200px;
-    z-index: 100;
-    background-image: url("../images/jdb0/02.png");
-    background-size: cover;
-    display: none;
-}
-
-.jdb03{
-    width: 130px;
-    height: 200px;
-    z-index: 100;
-    background-image: url("../images/jdb0/03.png");
-    background-size: cover;
-    display: none;
-}
-
-.jdb04{
-    width: 130px;
-    height: 200px;
-    z-index: 100;
-    background-image: url("../images/jdb0/04.png");
-    background-size: cover;
-    display: none;
-}
-
-.jdb05{
-    width: 130px;
-    height: 200px;
-    z-index: 100;
-    background-image: url("../images/jdb0/05.png");
-    background-size: cover;
-    display: none;
-}
-
-.jdb06{
-    width: 130px;
-    height: 200px;
-    z-index: 100;
-    background-image: url("../images/jdb0/06.png");
-    background-size: cover;
-    display: none;
-} */
-
-.sk-wave .sk-rect {
-    background-color: #ffff00;
-    height: 100%;
-    width: 6px;
-    display: inline-block;
-    z-index: 100000;
-    -webkit-animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
-    animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
-}
-
-@-webkit-keyframes sk-waveStretchDelay {
-
-    0%,
-    40%,
-    100% {
-        -webkit-transform: scaleY(0.4);
-        transform: scaleY(0.4);
-    }
-
-    20% {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-    }
-}
-
-@keyframes sk-waveStretchDelay {
-
-    0%,
-    40%,
-    100% {
-        -webkit-transform: scaleY(0.4);
-        transform: scaleY(0.4);
-    }
-
-    20% {
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-    }
-}
-
-
-/*自定义一个透明度从0到1的动画，它的名称是fade-in*/
-@keyframes fade-in{  
-    0%{ opacity: 0;}
-    100%{opacity:1;}
-}
-@-webkit-keyframes fade-in{
-    0%{ opacity: 0;}
-    100%{opacity:1;}
-}
-@-ms-keyframes fade-in{
-    0%{ opacity: 0;}
-    100%{opacity:1;}
-}
-@-o-keyframes fade-in{
-    0%{ opacity: 0;}
-    100%{opacity:1;}
-}
-@-moz-keyframes fade-in{
-    0%{ opacity: 0;}
-    100%{opacity:1;}
-}
-.shan {
+#jdb02{
     position: absolute;
-    top: 0px;
-    left: 0px;
-    right:0px;
-    bottom: 0px;
-    margin: auto;
-    
-    background: rgb(255, 230, 0);
-    width: 300px; 
-    height: 300px;
-    border-radius: 100%;
-    animation: show-animation 2s ease-in-out 0s infinite;
-    -moz-animation: show-animation 2s ease-in-out 0s infinite;
-    -webkit-animation: show-animation 2s ease-in-out 0s infinite;
+    top: 30%;
+    left: 50%;
 }
 
-@keyframes show-animation{
-    0%{
-        transform: scale(0);
-        -moz-transform: scale(0);
-        -webkit-transform: scale(0);
-    }
-    100%{
-        transform: scale(1);
-        -moz-transform: scale(1);
-        -webkit-transform: scale(1);
-        opacity: 0;
-    }
+#yg03{
+    position: absolute;
+    top: 60%;
+    left:60%;
+}
+
+#jdb03{
+    position: absolute;
+    top: 50%;
+    left: 20%;
 }
