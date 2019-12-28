@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <canvas id="renderCanvas" touch-action="none"></canvas>
+    <!-- <canvas id="renderCanvas" touch-action="none"></canvas> -->
 
     <!-- <img src="asset/images/loading3.gif" alt="" id="loadingGIF" class="center">
     <img src="asset/images/circle3.gif" alt="" id="scanGIF" class="center"> -->
@@ -25,15 +25,33 @@
         <span>下载中...请耐心等待</span>
     </div> -->
 
-    <div class="jdb" id="jdb01"></div>
-    <div class="yg" id="yg01"></div>
+    <div class="home_container">
+        <div class="start" id="start"></div>
+        <div class="help" id="help"></div>
+    </div>
 
-    <div class="jdb" id="jdb02"></div>
-    <div class="yg" id="yg02"></div>
+    <div class="prize_container">
+            <div class="start" id="start"></div>
+            <div class="help" id="help"></div>
+        </div>
 
-    <div class="jdb" id="jdb03"></div>
-    <div class="yg" id="yg03"></div>
+
+    <div id="main">
+        <div class="jdb" id="jdb01"></div>
+        <div class="yg" id="yg01"></div>
     
+        <div class="jdb" id="jdb02"></div>
+        <div class="yg" id="yg02"></div>
+    
+        <div class="jdb" id="jdb03"></div>
+        <div class="yg" id="yg03"></div>
+    </div>
+
+    <div id="picking">
+        <div class="jdb_p" id="jdb-pick"></div>
+        <div class="yg_p" id="yg-pick"></div>
+        <div class="ball" id="ball-pick"></div>
+    </div>
 
     <video id="video" playsinline=""></video>
 

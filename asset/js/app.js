@@ -103,18 +103,22 @@ window.addEventListener("resize", function () {
 
 initFunc();
 
-document.getElementById("jdb01").onclick = function s(){
-    console.log("jdb01 been clicked");
-}
+// document.getElementById("jdb01").onclick = function s(){
+//     console.log("jdb01 been clicked");
+// }
 
 
 $(document).ready(function(){
-    animateDiv('#jdb01');
-    animateDiv('#yg01');
-    animateDiv('#jdb02');
-    animateDiv('#yg02');
-    animateDiv('#jdb03');
-    animateDiv('#yg03');
+    animateDiv('#jdb01', 2000);
+    animateDiv('#yg01', 3000);
+    animateDiv('#jdb02', 5000);
+    animateDiv('#yg02', 3000);
+    animateDiv('#jdb03', 1000);
+    animateDiv('#yg03', 2000);
+
+    
+    console.log("set its height to", $(window).height());
+    $(".home_container").height($(window).height());
 });
 
 function makeNewPosition(){
@@ -130,10 +134,39 @@ function makeNewPosition(){
     
 }
 
-function animateDiv(myid){
+function animateDiv(myid, duration){
     var newq = makeNewPosition();
-    $(myid).animate({ top: newq[0], left: newq[1] }, 5000,   function(){
-      animateDiv(myid);        
+    $(myid).animate({ top: newq[0], left: newq[1] }, duration,   function(){
+      animateDiv(myid, duration);        
     });
     
 };
+
+
+$(".jdb").click(function(){
+    console.log("jdb been clicked");
+    $("#main").hide();
+    $("#picking").show();
+
+    $("#yg-pick").hide();
+    $("#jdb-pick").show();
+});
+
+$(".yg").click(function(){
+    console.log("yg been clicked");
+    $("#main").hide();
+    $("#picking").show();
+
+    $("#yg-pick").show();
+    $("#jdb-pick").hide();
+});
+
+$(".jdb").attr('background', '').on('load', function(){
+console.log("background loaded .....");
+});
+
+$("#start").click(function(){
+    $(".home_container").hide();
+});
+
+$("#picking").hide();
