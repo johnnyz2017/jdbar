@@ -177,6 +177,7 @@ $("#main").hide();
 
 $("#ball-pick").click(function(){
     $(".picked_container").show();
+    $("#main").hide();
 });
 
 $("#restart").click(function(){
