@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>Babylon.js sample code</title>
+
+        <!-- Babylon.js -->
+        <script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
+        <script src="https://preview.babylonjs.com/ammo.js"></script>
+        <script src="https://preview.babylonjs.com/cannon.js"></script>
+        <script src="https://preview.babylonjs.com/Oimo.js"></script>
+        <script src="https://preview.babylonjs.com/earcut.min.js"></script>
+        <script src="https://preview.babylonjs.com/babylon.js"></script>
+        <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+        <script src="https://preview.babylonjs.com/materialsLibrary/babylonjs.materials.min.js"></script>
+        <script src="https://preview.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
+        <script src="https://preview.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+        <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+        <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+        <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
+
+        <style>
+            html, body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            #renderCanvas {
+                width: 100%;
+                height: 100%;
+                touch-action: none;
+            }
+        </style>
+    </head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById("renderCanvas");
+
+        var engine = null;
+        var scene = null;
+        var createDefaultEngine = function() { return new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true }); };
+        var createScene = function () {
+            var scene = new BABYLON.Scene(engine);
+        
+            // Create camera and light
+            var light = new BABYLON.PointLight("Point", new BABYLON.Vector3(5, 10, 5), scene);
+            var camera = new BABYLON.ArcRotateCamera("Camera", 1, 0.8, 8, new BABYLON.Vector3(0, 0, 0), scene);
+            camera.attachControl(canvas, true);
+        
+            // Create a sprite manager to optimize GPU ressources
+            // Parameters : name, imgUrl, capacity, cellSize, scene
+            var spriteManagerTrees = new BABYLON.SpriteManager("treesManager", "textures/palm.png", 2000, 800, scene);
+        
+            //We create 2000 trees at random positions
+            for (var i = 0; i < 2000; i++) {
+                var tree = new BABYLON.Sprite("tree", spriteManagerTrees);
+                tree.position.x = Math.random() * 100 - 50;
+                tree.position.z = Math.random() * 100 - 50;
+                tree.isPickable = true;
+        
+                //Some "dead" trees
+                if (Math.round(Math.random() * 5) === 0) {
+                    tree.angle = Math.PI * 90 / 180;
+                    tree.position.y = -0.3;
+                }
+            }
+        
+            //Create a manager for the player's sprite animation
+            var spriteManagerPlayer = new BABYLON.SpriteManager("playerManager", "textures/jdb01.png", 5, 64, scene);
+        
+            // First animated player
+            var player = new BABYLON.Sprite("player", spriteManagerPlayer);
+            // player.playAnimation(0, 40, true, 100);
+            player.position.y = -0.3;
+            player.size = 0.3;
+            player.isPickable = true;
+        
+            // Second standing player
+            var player2 = new BABYLON.Sprite("player2", spriteManagerPlayer);
+            // player2.stopAnimation(); // Not animated
+            player2.cellIndex = 2; // Going to frame number 2
+            player2.position.y = -0.3;
+            player2.position.x = 1;
+            player2.size = 0.3;
+            player2.invertU = -1; //Change orientation
+            player2.isPickable = true;
+        
+        
+            // Picking
+            spriteManagerTrees.isPickable = true;
+            spriteManagerPlayer.isPickable = true;
+        
+            scene.onPointerDown = function (evt) {
+                var pickResult = scene.pickSprite(this.pointerX, this.pointerY);
+                if (pickResult.hit) {
+                    pickResult.pickedSprite.angle += 0.5;
+                }
+            };
+        
+        
+            return scene;
+        }
+        
+        
+        engine = createDefaultEngine();
+        if (!engine) throw 'engine should not be null.';
+        scene = createScene();
+
+        engine.runRenderLoop(function () {
+            if (scene) {
+                scene.render();
+            }
+        });
+
+        // Resize
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
+    </script>
+</body>
+</html>

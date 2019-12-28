@@ -6,31 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    .sprite { background: url('imgs/sprite-jdb-1.png') no-repeat top left; width: 1200px; height: 509px;  } 
-    .sprite.12 { background-position: 0 0; } 
-    .sprite.13 { background-position: 0 -519px; } 
-    .sprite.14 { background-position: 0 -1038px; } 
-    .sprite.15 { background-position: 0 -1557px; } 
-    .sprite.16 { background-position: 0 -2076px; } 
-    .sprite.17 { background-position: 0 -2595px; } 
-    .sprite.18 { background-position: 0 -3114px; width: 1201px; } 
-    .sprite.19 { background-position: 0 -3633px; width: 1201px; } 
-    .sprite.110 { background-position: 0 -4152px; width: 1201px; } 
-    .sprite.111 { background-position: 0 -4671px; width: 1201px; } 
-    .sprite.112 { background-position: 0 -5190px; width: 1201px; } 
+    .sprite { 
+        background: url('imgs/t2.png'); 
+        width: 687px; height: 1009px;  
+        animation: run 1s steps(6) infinite;
+        /* -webkit-animation: run 1s steps(6) infinite; */
+        transform: scale(0.1);
+    } 
+
+    @keyframes run {
+        100%{
+            background-position: -4172px;
+        }
+    }
+
+    @keyframes slide {
+        100%{margin-left: -4172px;}
+    }
+    /* .sprite.01 { background-position: 0 0; } 
+    .sprite.02 { background-position: -697px 0; } 
+    .sprite.03 { background-position: -1394px 0; } 
+    .sprite.04 { background-position: -2091px 0; } 
+    .sprite.05 { background-position: -2788px 0; } 
+    .sprite.06 { background-position: -3485px 0; }  */
     </style>
 </head>
 <body>
-    <div class='sprite 12'></div>
-    <div class='sprite 13'></div>
-    <div class='sprite 14'></div>
-    <div class='sprite 15'></div>
-    <div class='sprite 16'></div>
-    <div class='sprite 17'></div>
-    <div class='sprite 18'></div>
-    <div class='sprite 19'></div>
-    <div class='sprite 110'></div>
-    <div class='sprite 111'></div>
-    <div class='sprite 112'></div>
+    <div class="sprite">
+        <!-- <div class='sprite 01'></div>
+        <div class='sprite 02'></div>
+        <div class='sprite 03'></div>
+        <div class='sprite 04'></div>
+        <div class='sprite 05'></div>
+        <div class='sprite 06'></div> -->
+    </div>
+        
 </body>
 </html>
