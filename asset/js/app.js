@@ -1,4 +1,4 @@
-var constraints = { video: { facingMode: "user" }, audio: false };
+var constraints = { video: { facingMode: "environment" }, audio: false };//environment user
 const video = document.querySelector('#video');
 
 function cameraStart() {
@@ -13,7 +13,7 @@ function cameraStart() {
     });
 }
 
-cameraStart();
+// cameraStart();
 
 
 const webAR = new WebAR(1000, 'recognize.php');
@@ -101,4 +101,4 @@ window.addEventListener("resize", function () {
     console.log("window resize");
 });
 
-// initFunc();
+initFunc();

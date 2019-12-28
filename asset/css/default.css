@@ -30,35 +30,6 @@ audio {
     z-index: 1;
 }
 
-.left {
-    position: fixed;
-    top: 10px;
-    left: 5px;
-    width: 64px;
-    z-index: 100000;
-    opacity: 0;
-}
-
-.right {
-    position: fixed;
-    top: 10px;
-    right: 5px;
-    width: 64px;
-    z-index: 100000;
-    opacity: 0;
-}
-
-.on {
-    background-image: url('../images/music.png');
-    z-index: 100000;
-}
-
-.off {
-    background-image: url('../images/muted.png');
-    z-index: 100000;
-}
-
-
 .footer {
     position: fixed;
     bottom: 10px;
@@ -99,6 +70,77 @@ audio {
     text-align: center;
     font-size: 10px;
     z-index: 100000;
+}
+
+.yg{
+    position: absolute;
+    width: 130px;
+    height: 200px;
+    z-index: 100;
+    background-image: url("../images/yg0/1.png");
+    background-size: cover;
+    animation: yg-bg-sprit 1s infinite;
+}
+
+@keyframes yg-bg-sprit{
+    0%, 100%{
+        background-image: url("../images/yg0/1.png");
+    }
+
+    20%{
+        background-image: url("../images/yg0/2.png");
+    }
+
+    40%{
+        background-image: url("../images/yg0/3.png");
+    }
+
+    60%{
+        background-image: url("../images/yg0/4.png");
+    }
+
+    80%{
+        background-image: url("../images/yg0/5.png");
+    }
+}
+
+
+.jdb{
+    position: absolute;
+    top: 100px;
+    left: 300px;
+    width: 130px;
+    height: 200px;
+    z-index: 100;
+    background-image: url("../images/jdb0/01.png");
+    background-size: cover;
+    animation: jdb-bg-sprit 1s infinite;
+}
+
+@keyframes jdb-bg-sprit{
+    0%{
+        background-image: url("../images/jdb0/01.png");
+    }
+
+    20%{
+        background-image: url("../images/jdb0/02.png");
+    }
+
+    40%{
+        background-image: url("../images/jdb0/03.png");
+    }
+
+    60%{
+        background-image: url("../images/jdb0/04.png");
+    }
+
+    80%{
+        background-image: url("../images/jdb0/05.png");
+    }
+
+    90%{
+        background-image: url("../images/jdb0/06.png");
+    }
 }
 
 .sk-wave .sk-rect {
