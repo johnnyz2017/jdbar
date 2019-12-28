@@ -167,6 +167,8 @@ console.log("background loaded .....");
 
 $("#start").click(function(){
     $(".home_container").hide();
+    initFunc();
+    $("#main").show();
 });
 
 $("#picking").hide();
