@@ -211,12 +211,12 @@ body {
 }
 
 .home_container .start{
-    position: absolute;
-    display: inline-block;
+    /* position: absolute; */
+    display: table;
     margin: 0 auto;
-    margin-left: auto;
-    margin-right: auto;
-    top: 400px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin-top: 500px;
     width: 330px;
     height: 90px;
     z-index: 100010;
@@ -226,12 +226,12 @@ body {
 }
 
 .home_container .help{
-    position: absolute;
-    display: inline-block;
+    /* position: absolute; */
+    display: table;
     margin: 0 auto;
     margin-left: auto;
     margin-right: auto;
-    top: 500px;
+    /* margin-top: 500px; */
     width: 330px;
     height: 90px;
     z-index: 100010;
@@ -257,12 +257,11 @@ body {
 }
 
 .picked_container .start{
-    position: absolute;
-    display: inline-block;
+    display: table;
     margin: 0 auto;
-    margin-left: auto;
-    margin-right: auto;
-    top: 400px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin-top: 500px;
     width: 330px;
     height: 90px;
     z-index: 100010;
@@ -272,12 +271,8 @@ body {
 }
 
 .picked_container .help{
-    position: absolute;
-    display: inline-block;
+    display: table;
     margin: 0 auto;
-    margin-left: auto;
-    margin-right: auto;
-    top: 500px;
     width: 330px;
     height: 90px;
     z-index: 100010;
