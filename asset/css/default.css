@@ -206,7 +206,7 @@ body {
     z-index: 50;
     background-image: url("../images/others/home_bg.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: contain;
     z-index: 100000;
 }
 
@@ -216,13 +216,13 @@ body {
     margin: 0 auto;
     /* margin-left: auto;
     margin-right: auto; */
-    margin-top: 500px;
+    margin-top: 400px;
     width: 330px;
     height: 90px;
     z-index: 100010;
     background-image: url("../images/others/pick.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: contain;
 }
 
 .home_container .help{
@@ -237,7 +237,7 @@ body {
     z-index: 100010;
     background-image: url("../images/others/activity.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: contain;
 }
 
 
@@ -252,7 +252,7 @@ body {
     z-index: 50;
     background-image: url("../images/others/picking_bg.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: contain;
     z-index: 100000;
 }
 
@@ -261,9 +261,9 @@ body {
     margin: 0 auto;
     /* margin-left: auto;
     margin-right: auto; */
-    margin-top: 500px;
-    width: 330px;
-    height: 90px;
+    margin-top: 400px;
+    width: 250px;
+    height: 89px;
     z-index: 100010;
     background-image: url("../images/others/pick01.png");
     background-repeat: no-repeat;
@@ -273,10 +273,10 @@ body {
 .picked_container .help{
     display: table;
     margin: 0 auto;
-    width: 330px;
-    height: 90px;
+    width: 250px;
+    height: 89px;
     z-index: 100010;
-    background-image: url("../images/others/pick02.png");
+    background-image: url("../images/others/pick-continue.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
