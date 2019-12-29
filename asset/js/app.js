@@ -1,5 +1,7 @@
 var constraints = { video: { facingMode: "environment" }, audio: false };//environment user
 const video = document.querySelector('#video');
+var jumpaudio = new Audio('asset/audio/jump.mp3');
+var bgaudio = document.getElementById("bg_music");
 
 function cameraStart() {
     navigator.mediaDevices
@@ -184,6 +186,7 @@ $("#start").click(function(){
     initFunc();
     $("#main").show();
     showMainList();
+    bgaudio.play();
 });
 
 $("#picking").hide();
@@ -192,9 +195,15 @@ $("#main").hide();
 hideMainList();
 
 $("#ball-pick").click(function(){
-    $(".picked_container").show();
-    $("#main").hide();
-    hideMainList();
+    
+    jumpaudio.play();
+
+    jumpaudio.addEventListener('pause', function () {
+        $("#main").hide();
+        hideMainList();
+        $(".picked_container").show();
+    });
+    
 });
 
 $("#restart").click(function(){
