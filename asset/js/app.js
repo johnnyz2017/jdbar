@@ -16,6 +16,21 @@ function cameraStart() {
 // cameraStart();
 
 
+mainList = [];
+mainList.push($("#jdb01"));
+mainList.push($("#yg02"));
+mainList.push($("#jdb02"));
+mainList.push($("#yg03"));
+mainList.push($("#jdb03"));
+mainList.push($("#yg01"));
+
+function hideMainList(){
+    for(i=0; i< 6; i++){
+        mainList[i].hide();
+    }
+}
+
+
 const webAR = new WebAR(1000, 'recognize.php');
  
 var initFunc = function () {
@@ -116,7 +131,6 @@ $(document).ready(function(){
     animateDiv('#jdb03', 1000);
     animateDiv('#yg03', 2000);
 
-    
     console.log("set its height to", $(window).height());
     $(".home_container").height($(window).height());
 });
@@ -169,19 +183,38 @@ $("#start").click(function(){
     $(".home_container").hide();
     initFunc();
     $("#main").show();
+    showMainList();
 });
 
 $("#picking").hide();
 $(".picked_container").hide();
 $("#main").hide();
+hideMainList();
 
 $("#ball-pick").click(function(){
     $(".picked_container").show();
     $("#main").hide();
+    hideMainList();
 });
 
 $("#restart").click(function(){
     $(".picked_container").hide();
     $("#picking").hide();
     $("#main").show();
+    showMainList();
 });
+
+
+function showMainList(){
+    let timesRun = 0;
+    mainList[0].show();
+    let interval = setInterval(function(){
+        
+        timesRun += 1;
+        if(timesRun === 6){
+        clearInterval(interval);
+        }else{
+            mainList[timesRun].show();
+        }
+    }, 2000);
+}
