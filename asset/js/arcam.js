@@ -1,13 +1,4 @@
-/**
- * WebAR简单类
- * @param interval 识别间隔时间(毫秒)
- * @param recognizeUrl 识别服务地址
- * @constructor
- */
-const WebAR = function (interval, recognizeUrl) {
-    var interval = interval;
-    var recognizeUrl = recognizeUrl;
-
+const ARCam = function () {
     var videoSetting = {
         width: 320,
         height: 240
