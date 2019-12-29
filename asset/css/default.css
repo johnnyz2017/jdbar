@@ -14,14 +14,20 @@ body {
 }
 
 .footer {
-    opacity: 0;
+/* 
+    width: 980px;
+    height:100%;
+    left: 50%;
+    margin-left: -490px; */
+
+    opacity: 1;
     position: fixed;
     bottom: 10px;
 
     width: 100%;
     text-align: center;
 
-    z-index: 100000;
+    z-index: 10000;
 }
 
 .none{
@@ -123,7 +129,7 @@ body {
     width: 252px; height: 400px;
     background: url('../images/yg-sprites.png');
     animation: yg-anim 1s steps(5) infinite;
-    transform: scale(1);
+    transform: scale(0.8);
     z-index: 100;
     transform-origin: 0 0;
 }
@@ -139,7 +145,7 @@ body {
     width: 687px; height: 1009px;
     background: url('../images/jdb-sprites.png');
     animation: jdb-anim 1s steps(6) infinite;
-    transform: scale(0.5);
+    transform: scale(0.3);
     z-index: 100;
     transform-origin: 0 0;
 }

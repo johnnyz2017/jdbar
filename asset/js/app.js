@@ -2,7 +2,7 @@ let constraints = { video: { facingMode: "environment" }, audio: false };//envir
 let video = document.querySelector('#video');
 let jumpaudio = new Audio('asset/audio/jump.mp3');
 let bgaudio = document.getElementById("bg_music");
-let arCam = new ARCam();
+let arCam = new ARCam("", "");
 
 let mainList = [];
 mainList.push($("#jdb01"));
@@ -31,6 +31,7 @@ function initHide(){
 // $("#start").hide();
 }
 
+initHide();
  
 let initFunc = function () {
     console.log("init func start");
