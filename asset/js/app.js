@@ -164,7 +164,8 @@ $(".jdb").click(function(){
     $("#main").hide();
     $("#picking").show();
 
-    $("#yg-pick").hide();
+    // $("#yg-pick").hide();
+    $("#yg-pick").show();
     $("#jdb-pick").show();
 });
 
@@ -174,7 +175,8 @@ $(".yg").click(function(){
     $("#picking").show();
 
     $("#yg-pick").show();
-    $("#jdb-pick").hide();
+    // $("#jdb-pick").hide();
+    $("#jdb-pick").show();
 });
 
 $(".jdb").attr('background', '').on('load', function(){
@@ -191,6 +193,7 @@ $("#start").click(function(){
 
 $("#picking").hide();
 $(".picked_container").hide();
+$(".picked_container_failed").hide();
 $("#main").hide();
 hideMainList();
 
@@ -198,16 +201,46 @@ $("#ball-pick").click(function(){
     
     jumpaudio.play();
 
-    jumpaudio.addEventListener('pause', function () {
+    let randValue = Math.random() * 100;
+
+    if(randValue > 30){
         $("#main").hide();
+        $("#picking").hide();
         hideMainList();
+        $(".picked_container_failed").hide();
         $(".picked_container").show();
-    });
+    }else{
+        $("#main").hide();
+        $("#picking").hide();
+        hideMainList();
+        $(".picked_container").hide();
+        $(".picked_container_failed").show();
+    }
+
+    console.log("random value is ", randValue);
+    
+    // jumpaudio.addEventListener('pause', function () {
+    //     $("#main").hide();
+    //     $("#picking").hide();
+    //     hideMainList();
+    //     $(".picked_container").show();
+    // });
     
 });
 
-$("#restart").click(function(){
+$("#s_restart").click(function(){
+    console.log("restart")
     $(".picked_container").hide();
+    $(".picked_container_failed").hide();
+    $("#picking").hide();
+    $("#main").show();
+    showMainList();
+});
+
+$("#f_restart").click(function(){
+    console.log("restart")
+    $(".picked_container").hide();
+    $(".picked_container_failed").hide();
     $("#picking").hide();
     $("#main").show();
     showMainList();

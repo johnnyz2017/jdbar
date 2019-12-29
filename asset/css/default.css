@@ -6,22 +6,6 @@ body {
     overflow: hidden;
 }
 
-/* #renderCanvas {
-    width: 100%;
-    height: 100%;
-    outline: none;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-} */
-
-
-.none {
-    display: none;
-}
-
 #video {
     position: absolute;
     top: 0;
@@ -30,6 +14,7 @@ body {
 }
 
 .footer {
+    opacity: 0;
     position: fixed;
     bottom: 10px;
 
@@ -164,13 +149,13 @@ body {
 #jdb-pick{
     position: absolute;
     top: 0%;
-    left: 5%;
+    left: -10%;
 }
 
 #yg-pick{
     position: absolute;
-    top: 0%;
-    left: 20%;
+    top: 0px;
+    left: 50%;
 }
 
 .ball{
@@ -207,15 +192,13 @@ body {
     background-image: url("../images/others/home_bg.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center center;
     z-index: 100000;
 }
 
 .home_container .start{
-    /* position: absolute; */
     display: table;
     margin: 0 auto;
-    /* margin-left: auto;
-    margin-right: auto; */
     margin-top: 400px;
     width: 330px;
     height: 90px;
@@ -226,12 +209,10 @@ body {
 }
 
 .home_container .help{
-    /* position: absolute; */
     display: table;
     margin: 0 auto;
     margin-left: auto;
     margin-right: auto;
-    /* margin-top: 500px; */
     width: 330px;
     height: 90px;
     z-index: 100010;
@@ -250,21 +231,122 @@ body {
     width: 100%;
     height: 100%;
     z-index: 50;
-    background-image: url("../images/others/picking_bg.png");
-    background-repeat: no-repeat;
-    background-size: contain;
+    /* background-image: url("../images/others/picking_bg.png"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
     z-index: 100000;
 }
+
+
+.picked_container_failed{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    /* background-image: url("../images/others/picking_bg.png"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    z-index: 100000;
+}
+
+.picked_container_failed .failed_header{
+    display: table;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 400px;
+    height: 300px;
+    z-index: 100;
+    background-image: url("../images/others/failed-header.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    vertical-align:middle;
+}
+
+.picked_container_failed .failed_header .failed_contents{
+    display:table-cell; 
+    width: 100%;
+    height: 100px;
+    vertical-align:middle;
+    margin-top: -200px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transition: 0.5s;
+    line-height: 2px;
+    vertical-align: bottom;
+}
+
+.picked_container_failed .failed_help{
+    display: table;
+    margin: 0 auto;
+    width: 250px;
+    height: 89px;
+    z-index: 100;
+    margin-top: 100px;
+    background-image: url("../images/others/pick02.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/* .picked_container .failed_contents{
+    display:table-cell; 
+    width: 100%;
+    height: 100px;
+    vertical-align:middle;
+    margin-top: -200px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transition: 0.5s;
+    line-height: 2px;
+} */
+
+.picked_container .sucess_header{
+    display: table;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 90%;
+    height: 300px;
+    z-index: 100;
+    background-image: url("../images/others/success-header.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    vertical-align:middle;
+}
+
+.picked_container .sucess_header .sucess_contents{
+    display:table-cell; 
+    width: 100%;
+    vertical-align:middle;
+    letter-spacing: 0.1em;
+    text-align: center;
+    transition: 0.5s;
+    line-height: 2px;
+}
+
+
+.picked_container .gift{
+    display: table;
+    margin: 0 auto;
+    margin-top: -100px;
+    width: 246px;
+    height: 194px;
+    z-index: 100;
+    background-image: url("../images/others/gift.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 
 .picked_container .start{
     display: table;
     margin: 0 auto;
-    /* margin-left: auto;
-    margin-right: auto; */
-    margin-top: 400px;
+    margin-top: 30px;
     width: 250px;
     height: 89px;
-    z-index: 100010;
+    z-index: 100;
     background-image: url("../images/others/pick01.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -275,7 +357,7 @@ body {
     margin: 0 auto;
     width: 250px;
     height: 89px;
-    z-index: 100010;
+    z-index: 100;
     background-image: url("../images/others/pick-continue.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
