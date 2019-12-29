@@ -137,7 +137,7 @@ $(document).ready(function(){
     
 
     console.log("set its height to", $(window).height());
-    // $(".home_container").height($(window).height());
+    $(".home_container").height($(window).height());
 });
 
 function makeNewPosition(){
