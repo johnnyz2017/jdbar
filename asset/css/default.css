@@ -24,6 +24,10 @@ body {
     z-index: 100000;
 }
 
+.none{
+    display: none;
+}
+
 .mainCanvas {
     position: absolute;
     top: 0;
@@ -192,20 +196,21 @@ body {
     background-image: url("../images/others/home_bg.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center center;
+    background-position: top center;
     z-index: 100000;
 }
 
 .home_container .start{
     display: table;
     margin: 0 auto;
-    margin-top: 400px;
-    width: 330px;
-    height: 90px;
+    margin-top: 600px;
+    width: 300px;
+    height: 80px;
     z-index: 100010;
     background-image: url("../images/others/pick.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: top center;
 }
 
 .home_container .help{
@@ -213,12 +218,13 @@ body {
     margin: 0 auto;
     margin-left: auto;
     margin-right: auto;
-    width: 330px;
-    height: 90px;
+    width: 300px;
+    height: 80px;
     z-index: 100010;
     background-image: url("../images/others/activity.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: top center;
 }
 
 
@@ -234,6 +240,7 @@ body {
     /* background-image: url("../images/others/picking_bg.png"); */
     /* background-repeat: no-repeat; */
     /* background-size: contain; */
+    /* background-position: top center; */
     z-index: 100000;
 }
 
@@ -250,13 +257,14 @@ body {
     /* background-image: url("../images/others/picking_bg.png"); */
     /* background-repeat: no-repeat; */
     /* background-size: contain; */
+    /* background-position: top center; */
     z-index: 100000;
 }
 
 .picked_container_failed .failed_header{
     display: table;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 50px;
     width: 400px;
     height: 300px;
     z-index: 100;
@@ -306,7 +314,7 @@ body {
 .picked_container .sucess_header{
     display: table;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 50px;
     width: 90%;
     height: 300px;
     z-index: 100;
