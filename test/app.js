@@ -13,30 +13,24 @@ var initFunc = function () {
     const openCamera = (video, deviceId, videoSetting) => {
         webAR.openCamera(video, deviceId, videoSetting)
             .then((msg) => {
-                // 打开摄像头成功
-                // 将视频铺满全屏(简单处理)
                 let videoWidth = video.offsetWidth;
                 let videoHeight = video.offsetHeight;
 
                 if (window.innerWidth < window.innerHeight) {
-                    // 竖屏
                     if (videoHeight < window.innerHeight) {
                         video.setAttribute('height', window.innerHeight.toString() + 'px');
                     }
                 } else {
-                    // 横屏
                     if (videoWidth < window.innerWidth) {
                         video.setAttribute('width', window.innerWidth.toString() + 'px');
                     }
                 }
             })
             .catch((err) => {
-                console.log("##################"); //here
                 console.error(err);
             });
     };
 
-    // 列出视频设备
     webAR.listCamera(videoDevice)
         .then(() => {
             openCamera(video, videoDevice.value, videoSetting);
@@ -45,35 +39,9 @@ var initFunc = function () {
             };
         })
         .catch((err) => {
-            console.log("$$$$$$$$$$$$$$$$$$$$$$$$$");
             console.info(err);
         });
 };
-
-// var audioBG = document.getElementById('audio_bg');
-// var audioContents = document.getElementById('audio_contents');
-// var audioBirds = document.getElementById('audio_birds');
-// var contentsTxt = document.getElementById('contents_text');
-// var muted = true;
-// var musicControllerObj = document.querySelector("#musicController");
-// var restartObj = document.querySelector("#restartScan");
-// var armodeButton = document.querySelector("#armode");
-// var viewmodeButton = document.querySelector("#viewmode");
-
-// var loadingUI = document.getElementById('loadingUI');
-// loadingUI.classList.remove('sk-wave');
-// loadingUI.classList.add('none');
-
-// var scanOBJ = document.getElementById('scanIndict');
-// var scanGIF = document.getElementById('scanGIF');
-// var loadingGIF = document.getElementById('loadingGIF');
-// scanGIF.style.opacity = 1;
-// loadingGIF.style.opacity = 0;
-
-// contentsTxt.classList.remove('fade-in-words');
-// contentsTxt.classList.add('none');
-
-// restartObj.style.opacity = 0;
 
 document.addEventListener('touchstart', function () {
     console.log("touch start");
