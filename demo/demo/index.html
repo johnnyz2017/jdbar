@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WebAR Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="asset/css/default.css" />
+
+    
+</head>
+
+<body>
+    <audio id="bg_music" src="asset/audio/bg.mp3" type="audio/mpeg" loop preload="auto"></audio>
+
+
+    <div class="home_container">
+        <div class="start" id="start"></div>
+        <!-- <div class="help" id="help"></div> -->
+    </div>
+
+    <div class="picked_container_failed">
+        <div class="failed_header">   
+            <div class="failed_contents" id="cell0">
+                <p>很遗憾，</p>
+                <p>捕捉的预防上火神奇神器溜走了</p>
+            </div>
+        </div>
+        
+        <div class="failed_help" id="f_restart"></div>
+    </div>
+
+    <div class="picked_container">
+        <div class="sucess_header">
+            <div class="sucess_contents" id="cell1">
+                <p>恭喜您捕捉到了预防上火神器一枚</p>
+                <p id="pick_contents"></p>
+            </div>
+        </div>
+        <div class="gift"></div>
+        <!-- <div class="start" id="pick-gift"></div> -->
+        <div class="help" id="s_restart"></div>
+    </div>
+
+
+    <div id="main">
+        <div class="jdb" id="jdb01"></div>
+        <div class="yg" id="yg01"></div>
+    
+        <div class="jdb" id="jdb02"></div>
+        <div class="yg" id="yg02"></div>
+    
+        <div class="jdb" id="jdb03"></div>
+        <div class="yg" id="yg03"></div>
+    </div>
+
+    <div id="picking">
+        <div id="group_ball">
+            <div class="jdb_p" id="jdb-pick"></div>
+            <div class="yg_p" id="yg-pick"></div>
+        </div>
+        <div class="ball" id="ball-pick"></div>
+       
+    </div>
+
+    <!-- <div class="footer" id="hint">点击精灵球，抓住它吧，别让它溜走了哦~</div> -->
+    <!-- <div class="wrapper">
+        <div class="hint" id="hint">点击精灵球，抓住它吧，别让它溜走了哦~</div>
+    </div> -->
+
+    <script type="text/javascript" src="asset/js/jquery.min.js"></script>
+    <script type="text/javascript" src="asset/js/rtcUtils.js"></script>
+    <script type="text/javascript" src="asset/js/app.js"></script>
+</body>
+
+</html>
