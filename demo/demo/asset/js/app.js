@@ -140,9 +140,11 @@ $(".yg").click(function(){
     $("#jdb-pick").show();
 });
 
+initFunc();
+
 $("#start").click(function(){
     $(".home_container").hide();
-    initFunc();
+    // initFunc();
     $("#main").show();
     $("#hintMain").show();
     showMainList();
