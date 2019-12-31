@@ -383,7 +383,7 @@ body {
     display: table;
     margin: 0 auto;
     margin-top: 50px;
-    width: 600px;
+    /* width: 600px; */
     height: 500px;
     z-index: 100;
     background-image: url("../images/others/success-header.png");
@@ -518,4 +518,16 @@ body {
     background-image: url("../images/others/pick-continue.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+}
+
+@media screen and (min-width: 601px){
+    .picked_container .sucess_header{
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .picked_container .sucess_header{
+        width: 100%;
+    }
 }
