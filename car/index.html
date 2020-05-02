@@ -26,9 +26,6 @@
 			animate();
 
 			function init() {
-
-				var container, mesh;
-
 				container = document.getElementById( 'container' );
 
 				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1100 );
@@ -54,27 +51,12 @@
 				// invert the geometry on the x-axis so that all of the faces point inward
 				geometry.scale( - 1, 1, 1 );
 
-				var texture = new THREE.TextureLoader().load( 'textures/t002.jpg' );
+				var texture = new THREE.TextureLoader().load( 'textures/car01.jpg' );
 				var material = new THREE.MeshBasicMaterial( { map: texture } );
 
 				mesh = new THREE.Mesh( geometry, material );
 
 				scene.add( mesh );
-
-
-				// model
-				// var loader = new FBXLoader();
-				// loader.load( 'models/car2/car.fbx', function ( object ) {
-				// 	object.scale.x = object.scale.y = object.scale.z = 0.01;
-				// 	scene.add( object );
-				// } );
-
-				var loader = new THREE.GLTFLoader().setPath( 'models/car/' );
-				loader.load( 'scene.gltf', function ( gltf ) {
-					let object = gltf.scene;
-					object.scale.x = object.scale.y = object.scale.z = 1000;
-					scene.add( gltf.scene );
-				});
 
 				renderer = new THREE.WebGLRenderer();
 				renderer.setPixelRatio( window.devicePixelRatio );
@@ -86,17 +68,17 @@
 				if (isMobile) {
 					console.log("You are using Mobile");
 					controls = new THREE.DeviceOrientationControls( camera );
-					camera.position.set(0, 70, -10);
+					camera.position.set(0, 0, 0);
 				} else {
 					console.log("You are using Desktop");
 					controls = new THREE.OrbitControls( camera, renderer.domElement );
-					controls.target.set( 0, 70, -10 );
-					camera.position.set(0, 70, -30);
+					controls.target.set( 0, 0, 0 );
+					camera.position.set(0, 30, -30);
 					controls.minDistance = 0;
 					controls.maxDistance = 200;
-					controls.minPolarAngle = Math.PI / 3;
-					controls.maxPolarAngle = Math.PI / 2;
-					controls.enableZoom = false;
+					// controls.minPolarAngle = Math.PI / 3;
+					// controls.maxPolarAngle = Math.PI / 2;
+					// controls.enableZoom = false;
 					controls.enablePan = false;
 					controls.autoRotate = true;
 					controls.update();
@@ -122,6 +104,41 @@
 			function update() {
 				renderer.render( scene, camera );
 			}
+
+
+
+			var overscroll = function(el) {
+				console.log("element is ", el);
+				el.addEventListener('touchstart', function() {
+					var top = el.scrollTop
+					, totalScroll = el.scrollHeight
+					, currentScroll = top + el.offsetHeight;
+					//If we're at the top or the bottom of the containers
+					//scroll, push up or down one pixel.
+					//
+					//this prevents the scroll from "passing through" to
+					//the body.
+					if(top === 0) {
+						el.scrollTop = 1
+					} else if(currentScroll === totalScroll) {
+						el.scrollTop = top - 1
+					}
+				})
+				el.addEventListener('touchmove', function(evt) {
+					//if the content is actually scrollable, i.e. the content is long enough
+					//that scrolling can occur
+					if(el.offsetHeight < el.scrollHeight)
+						evt._isScroller = true
+				})
+			}
+			overscroll(container);
+			document.body.addEventListener('touchmove', function(evt) {
+			//In this case, the default behavior is scrolling the body, which
+			//would result in an overflow.  Since we don't want that, we preventDefault.
+			if(!evt._isScroller) {
+				evt.preventDefault()
+			}
+			})
 
 		</script>
 	</body>
